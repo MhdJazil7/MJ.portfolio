@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Muhammed Jazil | AI Expert & Vibe Coder</title>
+    <meta name="description"
+        content="Portfolio of Muhammed Jazil, an AI Expert and Vibe Coder specializing in futuristic web experiences.">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;700&family=Space+Grotesk:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+
+<body>
+    <canvas id="bg-canvas"></canvas>
+
+    <div class="noise-overlay"></div>
+    <div class="cursor-magnetic-aura"></div>
+    <div class="custom-cursor"></div>
+
+    <!-- Floating Decorative Shapes -->
+    <div class="floating-shapes">
+        <div class="shape shape-1"></div>
+        <div class="shape shape-2"></div>
+        <div class="shape shape-3"></div>
+    </div>
+
+    <header class="header">
+        <div class="logo">MJ.</div>
+        <nav class="nav">
+            <a href="#home" class="nav-link active">Home</a>
+            <a href="#work" class="nav-link">Work</a>
+            <a href="#about" class="nav-link">About</a>
+        </nav>
+        <a href="#contact" class="cta-button small">Let's Talk</a>
+    </header>
+
+    <main>
+        <section id="home" class="hero-section">
+            <div class="hero-container">
+                <div class="hero-content">
+                    <a href="#contact" class="badge">Open to work</a>
+                    <h1 class="hero-title">
+                        <span class="gradient-text">Muhammed Jazil</span>
+                    </h1>
+                    <h2 class="hero-subtitle">AI Expert & <span class="vibe-text glitch-text"
+                            data-text="Vibe Coder">Vibe
+                            Coder</span></h2>
+                    <p class="hero-bio">
+                        Building the future with <strong>Artificial Intelligence</strong> and <strong>Generative
+                            Tech</strong>.
+                        I craft digital experiences that feel alive.
+                        <br><br>
+                        Currently optimizing the <span class="highlight">human-AI loop</span>.
+                    </p>
+                    <div class="hero-actions">
+                        <a href="#contact" class="cta-button primary">Start a Project</a>
+                        <a href="#work" class="cta-button secondary">View Portfolio</a>
+                    </div>
+                </div>
+                <div class="hero-image-container">
+                    <div class="hero-portrait-ultra">
+
+                        <div class="code-stream">
+                            <span>&lt;ai_expert&gt;</span>
+                            <span>{vibe_coder}</span>
+                            <span>01011010</span>
+                            <span>process.next()</span>
+                            <span>neural_link</span>
+                        </div>
+
+                        <div class="portrait-container">
+                            <img src="profile_transparent.png" alt="Muhammed Jazil" class="subject-ultra">
+                        </div>
+
+                        <a href="mailto:jazilwork7@gmail.com" class="floating-badge-ultra">
+                            <span class="pulse-dot"></span>
+                            Available
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="hero-visual centered">
+                <div class="glow-orb"></div>
+            </div>
+        </section>
+
+        <section id="work" class="work-section reveal-on-scroll">
+            <h3 class="section-title">Selected Works <span class="count">(03)</span></h3>
+            <div class="project-grid">
+                <!-- Project 1 -->
+                <article class="project-card">
+                    <div class="project-image">
+                        <img src="https://images.unsplash.com/photo-1677442136019-21780ecad995?auto=format&fit=crop&q=80&w=800"
+                            alt="AI Agent Orchestrator">
+                    </div>
+                    <div class="project-info">
+                        <h4>AI Agent Orchestrator</h4>
+                        <p>GenAI / Systems Architecture</p>
+                        <a href="#" class="project-link">View Case Study &rarr;</a>
+                    </div>
+                </article>
+
+                <!-- Project 2 -->
+                <article class="project-card">
+                    <div class="project-image">
+                        <img src="https://images.unsplash.com/photo-1549490349-8643362247b5?auto=format&fit=crop&q=80&w=800"
+                            alt="Neural Style Transfer App">
+                    </div>
+                    <div class="project-info">
+                        <h4>Neural Style Transfer App</h4>
+                        <p>Machine Learning / React</p>
+                        <a href="#" class="project-link">View Case Study &rarr;</a>
+                    </div>
+                </article>
+
+                <!-- Project 3 -->
+                <article class="project-card">
+                    <div class="project-image">
+                        <img src="https://images.unsplash.com/photo-1550439062-609e1531270e?auto=format&fit=crop&q=80&w=800"
+                            alt="Vibe Coding Interface">
+                    </div>
+                    <div class="project-info">
+                        <h4>Vibe Coding Interface</h4>
+                        <p>UI Engineering / Creative Coding</p>
+                        <a href="#" class="project-link">View Case Study &rarr;</a>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <section id="about" class="about-section reveal-on-scroll">
+            <div class="about-container">
+                <div class="about-text">
+                    <h3 class="section-title">About Me</h3>
+                    <p>
+                        I'm not just a developer; I'm a <span class="highlight">Vibe Coder</span>.
+                        I blend deep technical expertise in AI with a keen eye for aesthetics and user experience.
+                        My goal is to make software that doesn't just work, but feels like magic.
+                    </p>
+                    <ul class="skills-list">
+                        <li>Large Language Models (LLMs)</li>
+                        <li>Python & PyTorch</li>
+                        <li>Modern Web (React/Next.js)</li>
+                        <li>Generative Art</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact" class="contact-section reveal-on-scroll">
+            <div class="contact-container">
+                <h3 class="section-title">Let's Create Together</h3>
+                <p>Have a project in mind? Let's vibe.</p>
+                <a href="mailto:jazilwork7@gmail.com" class="cta-button primary big">Send Me a Message</a>
+
+                <div class="social-links">
+                    <a href="#" class="social-link" aria-label="Twitter/X"><i class="fa-brands fa-x-twitter"></i></a>
+                    <a href="#" class="social-link" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
+                    <a href="https://www.linkedin.com/in/mhd-jazil-a2791b2b6?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"
+                        class="social-link" target="_blank" aria-label="LinkedIn"><i
+                            class="fa-brands fa-linkedin"></i></a>
+                    <a href="https://www.instagram.com/jaz.il._?igsh=NDJsaDBlZDdtczcx" class="social-link"
+                        target="_blank" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <p>&copy; 2026 Muhammed Jazil. Crafted with vibes and code.</p>
+    </footer>
+
+    <script>
+        // Force scroll to top on refresh
+        if ('scrollRestoration' in history) {
+            history.scrollRestoration = 'manual';
+        }
+        window.scrollTo(0, 0);
+
+        // Custom Cursor Logic
+        const cursor = document.querySelector('.custom-cursor');
+        const magneticAura = document.querySelector('.cursor-magnetic-aura');
+
+        document.addEventListener('mousemove', (e) => {
+            cursor.style.left = e.clientX + 'px';
+            cursor.style.top = e.clientY + 'px';
+            magneticAura.style.left = e.clientX + 'px';
+            magneticAura.style.top = e.clientY + 'px';
+        });
+
+        document.addEventListener('mousedown', () => {
+            cursor.style.transform = 'translate(-50%, -50%) scale(0.8)';
+            createGlobalPulse();
+        });
+        document.addEventListener('mouseup', () => cursor.style.transform = 'translate(-50%, -50%) scale(1)');
+
+        const interactables = document.querySelectorAll('a, button, .project-card, .logo, .social-link, .subject-ultra');
+        interactables.forEach(el => {
+            el.addEventListener('mouseenter', () => cursor.classList.add('cursor-hover'));
+            el.addEventListener('mouseleave', () => cursor.classList.remove('cursor-hover'));
+        });
+
+        const portrait = document.querySelector('.portrait-container');
+        if (portrait) {
+            portrait.addEventListener('mousedown', (e) => {
+                const rect = portrait.getBoundingClientRect();
+                const pulse = document.createElement('div');
+                pulse.className = 'portrait-pulse';
+                pulse.style.left = (e.clientX - rect.left) + 'px';
+                pulse.style.top = (e.clientY - rect.top) + 'px';
+                portrait.appendChild(pulse);
+                setTimeout(() => pulse.remove(), 1000);
+            });
+        }
+
+        // Scroll Reveal Logic
+        const observerOptions = { threshold: 0.1 };
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) entry.target.classList.add('revealed');
+            });
+        }, observerOptions);
+        document.querySelectorAll('.reveal-on-scroll').forEach(el => observer.observe(el));
+
+        // Background Animation Logic (Neural Constellation 2.0 - Enhanced)
+        const canvas = document.getElementById('bg-canvas');
+        const ctx = canvas.getContext('2d');
+        let particles = [];
+        let flares = [];
+        let mouse = { x: null, y: null, radius: 250, velocity: 0 };
+        let lastMouse = { x: 0, y: 0 };
+
+        function initCanvas() {
+            canvas.width = window.innerWidth;
+            canvas.height = window.innerHeight;
+            particles = [];
+            const numberOfParticles = Math.floor((canvas.width * canvas.height) / 8000);
+            for (let i = 0; i < numberOfParticles; i++) {
+                particles.push(new Particle());
+            }
+        }
+
+        class Particle {
+            constructor() {
+                this.x = Math.random() * canvas.width;
+                this.y = Math.random() * canvas.height;
+                this.size = Math.random() * 2 + 1;
+                this.isNode = Math.random() > 0.95;
+                this.density = (Math.random() * 30) + 10;
+                this.velocity = {
+                    x: (Math.random() - 0.5) * 0.8,
+                    y: (Math.random() - 0.5) * 0.8
+                };
+                this.pulse = 0;
+            }
+            draw() {
+                if (this.isNode) {
+                    this.pulse += 0.05;
+                    const pulseSize = this.size * (1 + Math.sin(this.pulse) * 0.5);
+                    ctx.fillStyle = `rgba(124, 58, 237, ${0.4 + Math.sin(this.pulse) * 0.2})`;
+                    ctx.shadowBlur = 15;
+                    ctx.shadowColor = 'rgba(124, 58, 237, 0.8)';
+                    ctx.beginPath();
+                    ctx.arc(this.x, this.y, pulseSize + 2, 0, Math.PI * 2);
+                    ctx.fill();
+                    ctx.shadowBlur = 0;
+                } else {
+                    ctx.fillStyle = 'rgba(124, 58, 237, 0.4)';
+                    ctx.beginPath();
+                    ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+                    ctx.fill();
+                }
+            }
+            update() {
+                this.x += this.velocity.x;
+                this.y += this.velocity.y;
+
+                if (this.x < 0 || this.x > canvas.width) this.velocity.x *= -1;
+                if (this.y < 0 || this.y > canvas.height) this.velocity.y *= -1;
+
+                let dx = mouse.x - this.x;
+                let dy = mouse.y - this.y;
+                let distance = Math.sqrt(dx * dx + dy * dy);
+
+                if (distance < mouse.radius) {
+                    let force = (mouse.radius - distance) / mouse.radius;
+                    let directionX = (dx / distance) * force * this.density;
+                    let directionY = (dy / distance) * force * this.density;
+                    this.x -= directionX * 0.5;
+                    this.y -= directionY * 0.5;
+                }
+            }
+        }
+
+        class Flare {
+            constructor(x, y) {
+                this.x = x;
+                this.y = y;
+                this.size = Math.random() * 40 + 20;
+                this.life = 1.0;
+                this.decay = Math.random() * 0.02 + 0.01;
+                this.color = `hsla(${260 + Math.random() * 40}, 70%, 60%, `;
+            }
+            draw() {
+                ctx.save();
+                ctx.globalCompositeOperation = 'screen';
+                const gradient = ctx.createRadialGradient(this.x, this.y, 0, this.x, this.y, this.size);
+                gradient.addColorStop(0, this.color + this.life * 0.3 + ')');
+                gradient.addColorStop(1, 'transparent');
+                ctx.fillStyle = gradient;
+                ctx.beginPath();
+                ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+                ctx.fill();
+                ctx.restore();
+            }
+            update() {
+                this.life -= this.decay;
+                this.size += 1;
+            }
+        }
+
+        function connect() {
+            for (let a = 0; a < particles.length; a++) {
+                for (let b = a; b < particles.length; b++) {
+                    let dx = particles[a].x - particles[b].x;
+                    let dy = particles[a].y - particles[b].y;
+                    let distance = Math.sqrt(dx * dx + dy * dy);
+
+                    if (distance < 150) {
+                        let opacity = (1 - (distance / 150)) * 0.2;
+                        let hue = 260 + (mouse.velocity * 2);
+                        ctx.strokeStyle = `hsla(${hue}, 70%, 60%, ${opacity})`;
+                        ctx.lineWidth = particles[a].isNode && particles[b].isNode ? 1.5 : 0.5;
+                        ctx.beginPath();
+                        ctx.moveTo(particles[a].x, particles[a].y);
+                        ctx.lineTo(particles[b].x, particles[b].y);
+                        ctx.stroke();
+                    }
+                }
+            }
+        }
+
+        function createGlobalPulse() {
+            const pulse = document.createElement('div');
+            pulse.className = 'global-pulse';
+            pulse.style.left = mouse.x + 'px';
+            pulse.style.top = mouse.y + 'px';
+            document.body.appendChild(pulse);
+            setTimeout(() => pulse.remove(), 1000);
+        }
+
+        window.addEventListener('mousemove', (e) => {
+            const dx = e.x - lastMouse.x;
+            const dy = e.y - lastMouse.y;
+            mouse.velocity = Math.sqrt(dx * dx + dy * dy);
+            mouse.x = e.x;
+            mouse.y = e.y;
+            lastMouse.x = e.x;
+            lastMouse.y = e.y;
+
+            if (mouse.velocity > 10) {
+                flares.push(new Flare(mouse.x, mouse.y));
+            }
+            if (flares.length > 20) flares.shift();
+        });
+
+        function animate() {
+            ctx.fillStyle = 'rgba(5, 5, 5, 0.15)'; // Trail effect
+            ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+            for (let i = 0; i < particles.length; i++) {
+                particles[i].draw();
+                particles[i].update();
+            }
+
+            for (let i = flares.length - 1; i >= 0; i--) {
+                flares[i].update();
+                flares[i].draw();
+                if (flares[i].life <= 0) flares.splice(i, 1);
+            }
+
+            connect();
+            requestAnimationFrame(animate);
+        }
+
+        window.addEventListener('resize', initCanvas);
+        initCanvas();
+        animate();
+    </script>
+</body>
+
+</html>
