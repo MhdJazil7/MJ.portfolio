@@ -1015,38 +1015,270 @@ a {
     font-size: 0.8rem;
 }
 
+/* =====================================================
+   HAMBURGER MENU
+   ===================================================== */
+.hamburger {
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    gap: 5px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 8px;
+    z-index: 200;
+    border-radius: 8px;
+    transition: background 0.3s ease;
+}
+
+.hamburger span {
+    display: block;
+    width: 24px;
+    height: 2px;
+    background: var(--text-primary);
+    border-radius: 2px;
+    transition: transform 0.35s var(--ease-out), opacity 0.25s ease, width 0.3s ease;
+    transform-origin: center;
+}
+
+.hamburger.open span:nth-child(1) {
+    transform: translateY(7px) rotate(45deg);
+}
+
+.hamburger.open span:nth-child(2) {
+    opacity: 0;
+    transform: scaleX(0);
+}
+
+.hamburger.open span:nth-child(3) {
+    transform: translateY(-7px) rotate(-45deg);
+}
+
+/* Mobile overlay */
+.mobile-menu-overlay {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.6);
+    backdrop-filter: blur(4px);
+    z-index: 98;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.mobile-menu-overlay.active {
+    opacity: 1;
+}
+
+/* =====================================================
+   TABLET (max 1024px)
+   ===================================================== */
 @media (max-width: 1024px) {
     .hero-container {
         grid-template-columns: 1fr;
         text-align: center;
-        gap: 3rem;
-        padding-top: 100px;
+        gap: 2rem;
+        padding-top: 110px;
     }
 
     .hero-portrait-ultra {
         width: 100%;
-        max-width: 320px;
-        height: 480px;
+        max-width: 340px;
+        height: 460px;
         margin: 0 auto;
     }
 
     .hero-actions {
         justify-content: center;
     }
+
+    .floating-badge-ultra {
+        right: 0;
+    }
 }
 
+/* =====================================================
+   MOBILE (max 768px)
+   ===================================================== */
 @media (max-width: 768px) {
+
+    /* Restore default cursor on touch devices */
+    body {
+        cursor: auto;
+    }
+
+    .custom-cursor,
+    .cursor-magnetic-aura {
+        display: none;
+    }
+
+    /* --- Header --- */
+    .header {
+        padding: 1rem 1.25rem;
+    }
+
+    .desktop-only {
+        display: none;
+    }
+
+    .hamburger {
+        display: flex;
+    }
+
+    /* Mobile nav drawer */
+    .nav {
+        position: fixed;
+        top: 0;
+        right: -100%;
+        width: min(75vw, 280px);
+        height: 100dvh;
+        background: rgba(10, 10, 10, 0.97);
+        backdrop-filter: blur(30px);
+        border-left: 1px solid var(--border-color);
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: center;
+        gap: 0;
+        padding: 2rem;
+        z-index: 99;
+        display: flex;
+        transition: right 0.4s var(--ease-out);
+    }
+
+    .nav.open {
+        right: 0;
+    }
+
+    .mobile-menu-overlay {
+        display: block;
+    }
+
+    .nav-link {
+        font-size: 1.4rem;
+        padding: 1rem 0;
+        width: 100%;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+        text-transform: none;
+        letter-spacing: 0;
+    }
+
+    .nav-link:last-child {
+        border-bottom: none;
+    }
+
+    /* Mobile "Let's Talk" inside nav */
+    .nav::after {
+        content: "Let's Talk →";
+        display: block;
+        margin-top: 2rem;
+        padding: 0.7rem 1.5rem;
+        background: var(--text-primary);
+        color: var(--bg-color);
+        border-radius: 50px;
+        font-weight: 700;
+        font-family: var(--font-heading);
+        font-size: 0.9rem;
+        text-align: center;
+        width: 100%;
+    }
+
+    /* --- Typography --- */
     .hero-title {
-        font-size: 3rem;
+        font-size: clamp(2.2rem, 9vw, 3.5rem);
     }
 
     .hero-subtitle {
-        font-size: 1.8rem;
+        font-size: clamp(1.4rem, 5.5vw, 2rem);
     }
 
-    .nav {
+    .hero-bio {
+        font-size: 1rem;
+    }
+
+    .section-title {
+        font-size: clamp(1.6rem, 6vw, 2rem);
+    }
+
+    .about-text p {
+        font-size: 1.1rem;
+    }
+
+    /* --- Hero --- */
+    .hero-section {
+        padding: 0 4%;
+    }
+
+    .hero-container {
+        grid-template-columns: 1fr;
+        text-align: center;
+        gap: 1.5rem;
+        padding-top: 100px;
+        padding-bottom: 2rem;
+    }
+
+    .hero-portrait-ultra {
+        max-width: 260px;
+        height: 360px;
+        margin: 0 auto;
+    }
+
+    .hero-actions {
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+
+    .hero-actions .cta-button {
+        flex: 1 1 140px;
+        text-align: center;
+    }
+
+    /* Floating badge — keep visible but anchored */
+    .floating-badge-ultra {
+        position: relative;
+        bottom: auto;
+        right: auto;
+        margin: 1rem auto 0;
+        display: inline-flex;
+        font-size: 0.8rem;
+        padding: 0.5rem 1.2rem;
+    }
+
+    /* --- Sections --- */
+    .work-section,
+    .about-section,
+    .contact-section {
+        padding: 4rem 4%;
+    }
+
+    .project-grid {
+        grid-template-columns: 1fr;
+    }
+
+    /* --- Contact --- */
+    .cta-button.big {
+        font-size: 1rem;
+        padding: 0.9rem 1.8rem;
+        width: 100%;
+        text-align: center;
+    }
+
+    .social-links {
+        gap: 1.5rem;
+        margin-top: 2.5rem;
+    }
+
+    /* Reduce heavy backdrop blur on mobile for perf */
+    .floating-shapes {
         display: none;
     }
+
+    .shape,
+    .glow-orb {
+        display: none;
+    }
+
+    /* Canvas particle reduction handled in JS */
 }
 
 /* Global Interaction Pulse */

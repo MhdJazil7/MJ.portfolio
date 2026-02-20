@@ -33,13 +33,19 @@
 
     <header class="header">
         <div class="logo">MJ.</div>
-        <nav class="nav">
+        <nav class="nav" id="main-nav">
             <a href="#home" class="nav-link active">Home</a>
             <a href="#work" class="nav-link">Work</a>
             <a href="#about" class="nav-link">About</a>
         </nav>
-        <a href="#contact" class="cta-button small">Let's Talk</a>
+        <a href="#contact" class="cta-button small desktop-only">Let's Talk</a>
+        <button class="hamburger" id="hamburger-btn" aria-label="Toggle menu" aria-expanded="false">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
     </header>
+    <div class="mobile-menu-overlay" id="mobile-menu-overlay"></div>
 
     <main>
         <section id="home" class="hero-section">
@@ -161,7 +167,8 @@
                 <a href="mailto:jazilwork7@gmail.com" class="cta-button primary big">Send Me a Message</a>
 
                 <div class="social-links">
-                    <a href="#" class="social-link" aria-label="Twitter/X"><i class="fa-brands fa-x-twitter"></i></a>
+                    <a href="https://x.com/Mhd_Jazil7" class="social-link" target="_blank" rel="noopener noreferrer"
+                        aria-label="Twitter/X"><i class="fa-brands fa-x-twitter"></i></a>
                     <a href="#" class="social-link" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
                     <a href="https://www.linkedin.com/in/mhd-jazil-a2791b2b6?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"
                         class="social-link" target="_blank" aria-label="LinkedIn"><i
@@ -241,7 +248,8 @@
             canvas.width = window.innerWidth;
             canvas.height = window.innerHeight;
             particles = [];
-            const numberOfParticles = Math.floor((canvas.width * canvas.height) / 8000);
+            const scale = window.__mobileParticleScale || 1;
+            const numberOfParticles = Math.floor((canvas.width * canvas.height) / 8000 * scale);
             for (let i = 0; i < numberOfParticles; i++) {
                 particles.push(new Particle());
             }
@@ -388,6 +396,45 @@
 
             connect();
             requestAnimationFrame(animate);
+        }
+
+        // ── Mobile: Hamburger Menu ──────────────────────────
+        const hamburgerBtn = document.getElementById('hamburger-btn');
+        const mainNav = document.getElementById('main-nav');
+        const menuOverlay = document.getElementById('mobile-menu-overlay');
+
+        function openMenu() {
+            hamburgerBtn.classList.add('open');
+            mainNav.classList.add('open');
+            menuOverlay.classList.add('active');
+            hamburgerBtn.setAttribute('aria-expanded', 'true');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeMenu() {
+            hamburgerBtn.classList.remove('open');
+            mainNav.classList.remove('open');
+            menuOverlay.classList.remove('active');
+            hamburgerBtn.setAttribute('aria-expanded', 'false');
+            document.body.style.overflow = '';
+        }
+
+        hamburgerBtn.addEventListener('click', () => {
+            mainNav.classList.contains('open') ? closeMenu() : openMenu();
+        });
+
+        menuOverlay.addEventListener('click', closeMenu);
+
+        // Close nav when any nav link is tapped
+        mainNav.querySelectorAll('.nav-link').forEach(link => {
+            link.addEventListener('click', closeMenu);
+        });
+
+        // ── Mobile: Canvas particle reduction ───────────────
+        const isMobile = window.matchMedia('(max-width: 768px)').matches;
+        if (isMobile) {
+            // Override particle density on mobile for performance
+            window.__mobileParticleScale = 0.3; // 30% of normal count
         }
 
         window.addEventListener('resize', initCanvas);
